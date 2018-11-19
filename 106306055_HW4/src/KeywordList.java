@@ -35,6 +35,7 @@ public class KeywordList {
 		list.add(keyWord);
 		System.out.println("Done!");
 	}
+	
 
 	public void outputIndex(int n) {
 		if (n > list.size()) { //because index start = 0

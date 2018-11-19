@@ -54,6 +54,7 @@ public class wordCounter {
 		// n shows that the occurence occures n time (n.length = n)
 		return count ;
 	}
+	
 
 }
 

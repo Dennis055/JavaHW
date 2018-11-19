@@ -7,6 +7,7 @@ import java.net.URLConnection;
 import java.security.PrivilegedActionException;
 import java.util.Stack;
 
+import javax.sound.sampled.Line;
 import javax.swing.text.TabableView;
 
 public class HtmlMatcher {
@@ -33,6 +34,7 @@ public class HtmlMatcher {
 		return retVal;
 	}
 	
+	
 	public void match() throws IOException {
 		if(content==null) {
 			content = fetchContent();//如果沒東西，就爬取
@@ -47,15 +49,15 @@ public class HtmlMatcher {
 		while((indexOfopen = content.indexOf("<",indexOfopen)) != -1) {
 			int indexOfClose = content.indexOf(">", indexOfopen);
 			//擷取「<XXX」當作一組物件為fullTag
-			String fullTag = content.substring(indexOfopen, indexOfClose+1);
+			String fullTag = content.substring(indexOfopen, indexOfClose);
 			//初始化tagName = " "
 			String tagName = null;
-			
+	
 			//接下來處理單元標籤以及一般標籤，好比<meta  ~~~~ />，不同於<head></head>
 			int indexOfSpace = -1;
 			//如果都沒有空白（一般標籤），則tagName =  ~ 去掉頭，先前的 <XXX 變成 XXX，也就是1 && length
 			if((indexOfSpace = fullTag.indexOf(" ")) == -1) {
-				tagName = fullTag.substring(1,fullTag.length()-1);
+				tagName = fullTag.substring(1,fullTag.length());
 				//有空白的話（單元標籤），從文字開始到空白地方，比如<meta  ~~/ 擷取meta，然後為了後續處理加上0
 			}else {
 				tagName = fullTag.substring(1,indexOfSpace);//get tag name from index 1 to index of space
@@ -111,6 +113,8 @@ public class HtmlMatcher {
 	/*
 	 * 撰寫取出stack所存的tag內容，以用來表示stack中還有什麼物件。
 	 */
+	
+	
 	private String getStackString(Stack<String>tagStack) {
 		StringBuilder  sBuilder = new StringBuilder();
 		for(int i =0;i<tagStack.size();i++) {

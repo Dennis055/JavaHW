@@ -54,6 +54,21 @@ public class WordCount {
 		// n shows that the occurence occures n time (n.length = n)
 		return count ;
 	}
+	
+	public int improve(String keyword) throws IOException {
+		if(cotent == null) {
+			cotent = fetchContent();
+		}
+		
+		cotent = cotent.toUpperCase();
+		int count = 0;
+		int curr = cotent.indexOf(keyword);
+		while(cotent.indexOf(keyword)!= -1 ) {
+			cotent = cotent.substring(curr + keyword.length() , cotent.length());
+			count++;
+		}
+		return count;
+	}
 
 }
 
