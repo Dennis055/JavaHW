@@ -36,4 +36,8 @@ public class BinaryTree {
 	public int height() {
 		return Node.height(root);
 	}
+	public static void main(String[]args) {
+		BinaryTree tree = new BinaryTree();
+		
+	}
 }
