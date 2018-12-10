@@ -95,6 +95,8 @@ public class KeywordList {
 			}
 		}
 	}
+	
+	
 
 	public void outputFirstN(int n) {
 		if (n > list.size()) {
@@ -120,6 +122,7 @@ public class KeywordList {
 		}
 		System.out.println("Score:" + sum);
 	}
+	
 
 	public void deleteIndex(int n) {
 		if (n >= list.size()) {
@@ -160,6 +163,8 @@ public class KeywordList {
 			System.out.println("Done");
 		}
 	}
+	
+	
 
 	public void deleteName(String name) {
 		ArrayList<keyWord>found = new ArrayList<>();
@@ -194,6 +199,8 @@ public class KeywordList {
 		}
 		System.out.println("Done!");
 	}
+	
+	
 
 	private void printKeywordList(ArrayList<keyWord> list) {
 		StringBuilder sBuilder = new StringBuilder();

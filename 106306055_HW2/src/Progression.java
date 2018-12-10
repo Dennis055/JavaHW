@@ -7,11 +7,13 @@ public abstract class Progression<T> {
 		this.curr = first;
 	}
 	
+	
 	public T firstValue() {
 		curr  = first;
 		return first;
 	}
 	public abstract T nextValue();
+	
 	
 	public void printProgression(int n) {
 		//System.out.println(firstValue());

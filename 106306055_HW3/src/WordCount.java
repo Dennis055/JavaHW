@@ -34,6 +34,8 @@ public class WordCount {
 		return retVal;
 	}
 	
+
+	
 	public  int countKeyword(String keyword) throws IOException {
 		if(cotent==null) {
 			cotent = fetchContent();
@@ -55,21 +57,4 @@ public class WordCount {
 		return count ;
 	}
 	
-	public int improve(String keyword) throws IOException {
-		if(cotent == null) {
-			cotent = fetchContent();
-		}
-		
-		cotent = cotent.toUpperCase();
-		int count = 0;
-		int curr = cotent.indexOf(keyword);
-		while(cotent.indexOf(keyword)!= -1 ) {
-			cotent = cotent.substring(curr + keyword.length() , cotent.length());
-			count++;
-		}
-		return count;
-	}
-
 }
-
-

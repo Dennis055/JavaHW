@@ -13,7 +13,7 @@ public class keywordHeap {
 	
 	public void add(Keyword k) {
 		heap.offer(k);
-		System.err.println("Done");
+		System.out.println("Done");
 	}
 	public void peek() {
 		if(heap.peek()==null) {

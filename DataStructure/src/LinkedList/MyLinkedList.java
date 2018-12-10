@@ -4,14 +4,24 @@ import java.util.function.IntPredicate;
 
 public class MyLinkedList {
 		Node head;
-	public void insert(Object value) {
+		int[]series;
+		int place = 0;
+	public void addFirst(Object value) {
 		if(head==null) {
 			Node first = new Node(value, null);
 			head = first;
 		}
 		Node node = new Node(value, head);
 		head = node;
+		head.setPosition(place);
+		place++;
 	}
+	public void addLast() {
+	}
+	public int getSize() {
+		return place + 1;
+	}
+
 	public Node remove() {
 		if(head==null)
 			System.out.println("Invalid Operand");
@@ -22,14 +32,20 @@ public class MyLinkedList {
 		this.head = new_head;
 		return bye;
 	}
+	public void addBefore(int value , int place) {
+		
+	}
+	public void addAfter(int value , int place) {
+		
+	}
+	
+	public boolean isEmpty() {
+		return place==0;
+	}
+	
+	
 	public static void main(String[]args) {
 		MyLinkedList list = new MyLinkedList();
-		list.insert(1);
-		list.insert(2);
-		list.insert(3);
-		for(int i = 0;i<3;i++) {
-			System.out.print(list.head);
-		}
 	}
 
 }

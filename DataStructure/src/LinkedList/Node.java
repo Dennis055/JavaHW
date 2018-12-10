@@ -3,6 +3,7 @@ package LinkedList;
 public class Node {
 		private Object ele;
 		private Node next;
+		private int position;
 		public Node(Object ele , Node next) {
 			// TODO Auto-generated constructor stub
 			this.ele = ele;
@@ -20,5 +21,11 @@ public class Node {
 		}
 		public void setNext(Node new_next) {
 			this.next = new_next;
+		}
+		public void setPosition(int place){
+			this.position = place;
+		}
+		public int getPosition() {
+			return this.position;
 		}
 }	

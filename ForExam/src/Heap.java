@@ -1,3 +1,5 @@
+import javax.swing.plaf.nimbus.AbstractRegionPainter;
+import javax.xml.transform.Templates;
 
 public class Heap {
 	int[]heap;
@@ -22,11 +24,6 @@ public class Heap {
 	public void add(int item) {
 		if(pos==heap.length)
 			reSize();
-		if(isEmpty()) {
-			heap[pos] = item;
-			pos++;
-			return;
-			}
 		heap[pos++] = item;
 		minHeapify(pos-1);
 	}
@@ -49,7 +46,7 @@ public class Heap {
 			heap[i] = heap[i+1];
 		}
 		for(int i =pos;i>0;i--) {
-			minHeapify(i);//重新調整
+			minHeapify(i-1);//重新調整
 		}
 		return bye;
 	}
@@ -76,32 +73,34 @@ public class Heap {
 		}
 		heap = curr;
 	}
-	public int[] heapSort(int[]arr) {
-		int length = arr.length;
-		int[]collect = new int[arr.length];
-		for(int i =arr.length-1;i>=0;i--) {
-			 add(arr[i]);//add method就會heapify了
-			 System.out.print(arr[i] + " ");
-		}
-		System.out.println("");
-		for(int i = 1;i<length+1;i++) {
-			collect[i-1] = delete(min());
-			System.out.print(collect[i-1] + " ");
-		}
-		return collect;
-	}
+//	public int[] heapSort(int[]arr) {
+//		int length = arr.length;
+//		int[]collect = new int[arr.length];
+//		for(int i =length-1;i>=0;i--) {
+//			 add(arr[i]);//add method就會heapify了
+//			 System.out.print(arr[i] + " ");
+//		}
+//		System.out.println("");
+//		for(int i = 1; i<length+1; i++) {
+//			collect[i-1]= delete(min());
+//			System.out.print(collect[i-1] + " ");
+//		}
+//		return collect;
+//	}
+
 	public static void main(String[]args) {
 		Heap heap = new Heap();
-//		heap.add(7);
-//		heap.add(5);
-//		heap.add(3);
 		for(int i = 5;i>0;i--) {
 			heap.add(i);
 			System.out.println(heap.min());
 		}
 		System.out.println("");
 		Heap sorter = new Heap();
-		int[]test = {1,4,2,6,7,5,3};
-		test = sorter.heapSort(test);
+		int[]test = {1,3,2,6,7,5,4};
+		//test = sorter.sort(test);
+		System.out.println("");
+		for(int i=0;i<test.length;i++) {
+			System.out.print(test[i] + " ");
+		}
 	}
 }

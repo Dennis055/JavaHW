@@ -7,7 +7,6 @@ import javax.xml.transform.Templates;
 public class QuickSort {
 		int[]arr;
 		public QuickSort(int[]source) {
-			// TODO Auto-generated constructor stub
 			arr = source;
 		}
 		public void sort(int from , int to) {

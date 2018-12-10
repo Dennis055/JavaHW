@@ -1,5 +1,7 @@
 import java.util.Currency;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 
 public class GeomProgression <T extends Number> extends Progression<T>{
 	public GeomProgression(T first,T base) {
@@ -7,6 +9,7 @@ public class GeomProgression <T extends Number> extends Progression<T>{
 		this.base = base;
 		// TODO Auto-generated constructor stub
 	}
+	
 	private T base;
 	
 	private T multiply(T a, T b) {
@@ -15,6 +18,7 @@ public class GeomProgression <T extends Number> extends Progression<T>{
 			Integer erasedValue = a.intValue()*b.intValue();
 			return (T) erasedValue;
 		}
+
 		else if(a instanceof Long){
 			Long eraseValue = a.longValue() *b.longValue();
 			return (T)eraseValue;
