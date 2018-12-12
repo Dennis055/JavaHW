@@ -6,7 +6,7 @@ import javax.security.auth.kerberos.KerberosKey;
 
 public class KeywordList {
 			private ArrayList<Keyword>list;
-			
+			//利用list 來當base
 			
 		public KeywordList() {
 				// TODO Auto-generated constructor stub
@@ -26,7 +26,7 @@ public class KeywordList {
 			private ArrayList<Keyword>doQuickSort(ArrayList<Keyword>li){
 				if(li.size()<2) return li;
 				ArrayList<Keyword>result = new ArrayList<>();
-				int pivotIndex = li.size()/2;
+				int pivotIndex = li.size()/2; //這裡是把中間的當作pivot
 				Keyword pivotKeyword = li.get(pivotIndex);
 				
 				ArrayList<Keyword>lessList = new ArrayList<>();
