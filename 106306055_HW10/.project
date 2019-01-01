@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>try_catch_practice</name>
+	<name>106306055_HW10</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -10,15 +10,21 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 	<linkedResources>
 		<link>
-			<name>107306046Lab11</name>
+			<name>jsoup-1.11.3</name>
 			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Downloads/107306046Lab11</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Downloads/jsoup-1.11.3</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

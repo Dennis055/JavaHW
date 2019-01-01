@@ -32,6 +32,7 @@ public class WordCount {
 			retVal = retVal + line + "\n";  
 		}
 		return retVal;
+		
 	}
 	
 

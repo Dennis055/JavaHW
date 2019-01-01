@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.lang.model.element.VariableElement;
+
 public class Main {
 		public static void main(String[]args) {
 			KeywordList list = new KeywordList();
