@@ -22,27 +22,11 @@ public class Main {
 			while(sc.hasNextLine()) {
 				int NumOfKeywords = sc.nextInt();
 				ArrayList<Keyword>keywords = new ArrayList<>();
-				String init1 = "租屋";
-				String init2 = "學生";
-				String init3 = "低價";
-				String init4 = "車位";
-				String init5  = "傢俱";
-				Keyword k1 = new Keyword(init1, 3);
-				Keyword k2 = new Keyword(init2, 2.5);
-				Keyword k3 = new Keyword(init3, 2);
-				Keyword k4 = new Keyword(init4, 1.5);
-				Keyword k5 = new Keyword(init5, 1.2);
-				
-				keywords.add(k1);
-				keywords.add(k2);
-				keywords.add(k3);
-				keywords.add(k4);
-				keywords.add(k5);
 				
 				for(int i=0;i<NumOfKeywords;i++) {
 					String name = sc.next();
-				
-					Keyword k = new Keyword(name, 1.1);
+					double weight = sc.nextDouble();
+					Keyword k = new Keyword(name, weight);
 					keywords.add(k);
 				}
 				tree.setPostOrderScore(keywords);
