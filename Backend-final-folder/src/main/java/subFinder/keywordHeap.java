@@ -1,3 +1,4 @@
+package subFinder;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -8,7 +9,7 @@ public class keywordHeap {
 	
 	public keywordHeap() {
 		KeywordComparator comp = new KeywordComparator();
-		this.heap = new PriorityQueue<>(10, new KeywordComparator());
+		this.heap = new PriorityQueue<Keyword>(10, new KeywordComparator());
 	}
 	
 	public void add(Keyword k) {
@@ -29,10 +30,11 @@ public class keywordHeap {
 		System.out.println(k.toString());
 	}
 	
+	
 	public void output() {
 		//TODO: print and remove all
-		// Use poll() ，目前改成
-		ArrayList<Keyword>result = new ArrayList<>();
+		// Use poll()
+		ArrayList<Keyword>result = new ArrayList<Keyword>();
 		int times = heap.size();
 		for(int i = 0 ; i<times;i++) {
 			Keyword k = heap.poll();
@@ -40,8 +42,9 @@ public class keywordHeap {
 			System.out.print(k);
 		}
 	}
-	public void outPut() {
-		ArrayList<Keyword>result = new ArrayList<>();
+	
+	public void showPri() {
+		ArrayList<Keyword>result = new ArrayList<Keyword>();
 		int times = heap.size();
 		for(int i = 0 ; i<times ;i++) {
 			Keyword k = heap.poll();

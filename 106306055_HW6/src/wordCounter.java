@@ -39,12 +39,12 @@ public class wordCounter {
 			cotent = fetchContent();
 		} // To count the times of content after this method
 		
-		cotent = cotent.toUpperCase();
-		keyword = keyword.toUpperCase();
+//		cotent = cotent.toUpperCase();
+//		keyword = keyword.toUpperCase();
 		// Transforming the word to upper case for catch the key word 
 		
 		// TO DO:indexOf(keyword)
-		int count = 0;	
+		int count = 1;	
 		while(cotent.indexOf(keyword)!=-1) {
 		int cur = cotent.indexOf(keyword);
 		cotent = cotent.substring(cotent.indexOf(keyword) + keyword.length(),cotent.length());

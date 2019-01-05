@@ -23,6 +23,9 @@ public class Main {
 			case "output":
 				heap.output();
 				break;
+			case "h":
+				heap.outPut();
+				break;
 			default:
 				System.out.println("InvalidOperationad");
 				break;

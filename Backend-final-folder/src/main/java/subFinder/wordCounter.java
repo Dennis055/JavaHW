@@ -21,6 +21,10 @@ public class wordCounter {
 		this.url = url;
 	}
 	private String fetchContent() throws IOException{
+		//TODO 如何處理沒有https的網頁？以免出現 java.net.MalformedURLException:
+		if(this.url.contains("BBC")==true) {
+			this.url = "https://www.google.com"; //
+		}
 		URL url = new URL(this.url);
 		URLConnection conn = url.openConnection();
 		InputStream in = conn.getInputStream();

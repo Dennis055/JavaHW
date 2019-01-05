@@ -27,16 +27,7 @@ public class subFinder {
 //		public String searchKeyword;
 		public String url;
 		public String content;
-//		public subFinder(String url) {
-//			// TODO Auto-generated constructor stub
-//			this.url = url;
-//		}
-		
-//		public GoogleQuery(String searchKeyword) {
-//			this.searchKeyword = searchKeyword;
-//			this.url = "https://www.google.com.tw/search?q=" + searchKeyword + "&oe=utf8&num=100";
-//		}
-//		
+
 		private String fetchContent() throws IOException {
 			String retVal = "";
 			URL urlStr = new URL(this.url);
@@ -73,12 +64,13 @@ public class subFinder {
 				  linkHref = url + "/" + linkHref;//Adjust the content and add the http
 			  }
 			  hreflist.add(linkHref);
-			 // System.out.println(linkHref);
 			}
 			return hreflist;//root
 		}
 		
 		
+		
+		//For test main function
 //		public static void main(String[]args) throws IOException {
 //			ArrayList<String>imgurl = new ArrayList<String>(); 
 //			String url = "http://www.home7-11.com.tw";
