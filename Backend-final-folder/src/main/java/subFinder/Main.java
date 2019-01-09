@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-			subFinder finder = new subFinder();
+		
 			Scanner scanner = new Scanner(System.in);
 			while(scanner.hasNext()) {
 				String searchKeyword = scanner.nextLine();
@@ -18,8 +18,8 @@ public class Main {
 				for(String rooturl:rootlist) {
 					WebPage rootPage = new WebPage(rooturl, "");
 					WebTree tree = new WebTree(rootPage);
-					
-					ArrayList<String>children  = finder.findSublinks(rooturl);
+					subFinder finder = new subFinder(rooturl);
+					ArrayList<String>children  = finder.findSublinks();
 					for(String child:children) {
 						tree.root.addChild(new WebNode(new WebPage(child , "")));
 					}
